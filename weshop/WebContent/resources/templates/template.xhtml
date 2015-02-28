@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="style.css"/>
+	
+	<h:outputScript library="js" name="jquery.min.js"></h:outputScript>
+	<h:outputScript library="js" name="bootstrap.min.js"></h:outputScript>
+	<h:outputScript library="js" name="scripts.js"></h:outputScript>
+</h:head> 
+<h:body > 
+	<div id="container">
+	<div class="topo">
+		<span class="logo-sp">
+			<a href="http://localhost:8080/weshop/home.jsf" class="logo-text">WE SHOP</a>
+		</span>
+		<span class="searc-sp">
+			<h:inputText type="text" class="search" value=""/>
+			<button  class="btn glyphicon btn-default  glyphicon-search" >Buscar</button>
+		</span>
+		<div align="right" class="action-sp">
+			<a id="bt-log-id" class="btn btn-primary " href="#login-modal" data-toggle="modal">Entrar</a>
+			<a id="bt-reg-id" class="btn btn-primary " href="http://localhost:8080/weshop/paginas/cadastro/usuario.jsf" data-toggle="modal">Registra</a>
+			<a id="atrigger" class="btn btn-primary " href="http://localhost:8080/weshop/paginas/cadastro/loja.jsf" data-toggle="modal">Minha Loja</a>
+		</div>
+	</div>
+	<b:modal id="login-modal" title="Identificação do Usuário">
+		<h:form>
+			<div >
+			<h:outputLabel value="E-mail :" for="e-mail"/>
+			<h:inputText id="e-mail" value="#{usuarioMB.usuario.email}"/>
+			<h:outputLabel value="Senha :" for="senha"/>
+			<h:inputSecret id="senha" class="in" value="#{usuarioMB.usuario.senha}"/><br />
+			<h:commandButton class="btn btn-primary" value="Entrar" action="#{usuarioMB.login()}"/>
+			</div>
+		</h:form>
+	</b:modal>
+
+		<div id="corpo" style="position: relative; padding-bottom: 10px;">
+			<ui:insert name="corpo">
+
+			</ui:insert>
+		</div>
+
+		<div class="footer_p ">
+		WE Shop ©  2014
+	</div>
+	</div>
+
+</h:body> 
+</html>

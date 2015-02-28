@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+   <h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+	<h:outputScript library="js" name="jquery.min.js"></h:outputScript>
+	<h:outputScript library="js" name="bootstrap.min.js"></h:outputScript>
+	<h:outputScript library="js" name="scripts.js"></h:outputScript>
+</h:head> 
+    <ui:composition template="../../resources/templates/template.xhtml">
+        <ui:define name="corpo">
+	<h1>Cadastro de Empresa</h1>
+	<hr />
+	<h:form>
+	<p:panel header="Cadastro de Empresa " >
+                
+                <p:panel id="cadEmpresa" >
+                    <p:fieldset >
+                    <legend>Empresa</legend> 
+                <h:panelGrid columns="3">
+                    <h:column >
+                            <label>Razão Social</label>
+                            <p:inputText value="#{clienteMB.cliente.razaoSocial}"/>
+                    </h:column>
+                    <h:column >
+                        <h:panelGrid columns="2">
+                        <label>CNPJ</label>
+                        <p:inputMask mask="99.999.999/9999-99" value="#{clienteMB.cliente.cnpj}"/>
+                        </h:panelGrid>
+                    </h:column >
+                    <h:column >
+                        
+                        <h:panelGrid columns="2">
+                        <label>Nome Fantasia</label>
+                        <p:inputText value="#{clienteMB.cliente.nomeFantasia}"/>
+                        </h:panelGrid>
+                   </h:column >
+                </h:panelGrid>
+                </p:fieldset>
+                    
+                
+                   
+                <fieldset>
+                    <legend>Endereço</legend>
+                <h:panelGrid columns="4">
+                    <h:column >
+                        <h:panelGrid columns="2" >
+                        <label>Logradouro</label>
+                        <p:inputText value="#{clienteMB.cliente.endereco.logradouro}"/>
+                        </h:panelGrid>
+                    </h:column>
+                    <h:column >
+                        <h:panelGrid columns="2" >
+                        <label>Número</label>
+                        <p:inputText value="#{clienteMB.cliente.endereco.numero}"/>
+                        </h:panelGrid>
+                    </h:column>
+                    <h:column >
+                        <h:panelGrid columns="2" >
+                        <label>Complemento</label>
+                        <p:inputText value="#{clienteMB.cliente.endereco.complemento}"/>
+                        </h:panelGrid>
+                    </h:column>
+                    <h:column >
+                        <h:panelGrid columns="2">
+                        <label>CEP</label>
+                        <p:inputMask mask="99.999-999" value="#{clienteMB.cliente.endereco.cep}"/>
+                        </h:panelGrid>
+                    </h:column>
+                    <h:column >
+                        <h:panelGrid columns="2" >
+                        <label>Bairro</label>
+                        <p:inputText value="#{clienteMB.cliente.endereco.bairro}"/>
+                        </h:panelGrid>
+                    </h:column>
+                    <h:column >
+                        <h:panelGrid columns="2" >
+                        <label>Cidade</label>
+                        <p:inputText value="#{clienteMB.cliente.endereco.cidade}"/>
+                        </h:panelGrid>
+                    </h:column>
+                    <h:column >
+                        <h:panelGrid columns="2">
+                        <label>Estado</label>
+                        <p:selectOneMenu value="#{clienteMB.cliente.endereco.estado}">
+                            <f:selectItem itemValue=" " itemLabel="Selecione"/>
+                         </p:selectOneMenu>
+                        </h:panelGrid>
+                    </h:column>
+                    <h:column >
+                        <h:panelGrid columns="2">
+                        <label>País</label>
+                        <p:inputText value="#{clienteMB.cliente.endereco.pais}"/>
+                        </h:panelGrid>
+                    </h:column>
+                </h:panelGrid>
+                </fieldset>
+                    
+            </p:panel>
+                
+            <p:commandButton value="Novo" action="#{clienteMB.novo()}" onclick="update"/>
+ 			<p:confirmDialog global="true" showEffect="fade" hideEffect="explode" >  
+                    <p:commandButton value="Yes" type="button"  styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>  
+                    <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>       
+               </p:confirmDialog> 
+               </p:panel>
+           </h:form>
+    
+        </ui:define>
+    </ui:composition>
+</html>

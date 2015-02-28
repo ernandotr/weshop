@@ -1,0 +1,263 @@
+<!DOCTYPE html > 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"> 
+
+<ui:composition template=" ../../resources/templates/template.xhtml">
+	<ui:define name="corpo">
+	<h:form>
+	
+	<h1>Cadastro de Usuário</h1>
+	<hr />
+	<div class="container">
+		<div class="tabbable" id="tabs-182516">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#panel-215511" data-toggle="tab">Pessoa Física</a>
+					</li>
+					<li>
+						<a href="#panel-880161" data-toggle="tab">Pessoa Jurídica</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-215511">
+						<div class="row">
+							<span class="col-md-4">
+								<span > <h:outputText value="Nome:"/> </span>
+								 <span ><h:inputText class="input" value="#{usuarioMB.usuario.nome}"/> </span>
+							</span>
+							<span class="col-md-4">
+								<span > <h:outputText value="E-mail"/> </span>
+								<span > <h:inputText class="input" value="#{usuarioMB.usuario.email}"/> </span>
+							</span>
+							<span class="col-md-4">
+								<span > <h:outputText value="Senha"/> </span>
+								<span > 
+									<h:inputSecret class="input"  value="#{usuarioMB.usuario.senha}"/>
+										
+								</span>
+							</span>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<span > <h:outputText value="Data de Nascimento"/> </span>
+								 <h:inputText  class="input" value="#{usuarioMB.usuario.dataNascimento
+								 }">
+								 	<f:convertDateTime pattern="dd/MM/yyyy"/>
+								 </h:inputText>
+							</div>
+							<span class="col-md-4">
+								<span > <h:outputText value="CPF"/> </span>
+								<span > <h:inputText class="input" value="#{usuarioMB.usuario.cpf}"/> </span>
+							</span>
+							<div class="col-md-4">
+								<span > <h:outputText value="CEP"/> </span>
+								<span > <h:inputText class="input" value="#{usuarioMB.usuario.endereco.cep}"/> </span>
+							</div>
+						</div>
+						<div class="row">
+							
+							<div class="col-md-4">
+								<span > <h:outputText value="Logradouro"/> </span>
+								<span > <h:inputText class="input" value="#{usuarioMB.usuario.endereco.logradouro}"/> </span>
+							</div>
+							<div class="col-md-4">
+								<span > <h:outputText value="Número"/> </span>
+								<span > <h:inputText class="input" value="#{usuarioMB.usuario.endereco.numero}"/> </span>
+							</div>
+							<div class="col-md-4">
+								<span > <h:outputText value="Complemento"/> </span>
+								<span > <h:inputText class="input" value="#{usuarioMB.usuario.endereco.complemento}"/> </span>
+							</div>
+						</div>
+						<div class="row">
+							
+							<div class="col-md-4">
+								<span > <h:outputText value="Bairro"/> </span>
+								<span > <h:inputText class="input" value="#{usuarioMB.usuario.endereco.bairro}"/> </span>
+							</div>
+							<div class="col-md-4">
+								<span> <h:outputText value="Cidade"/> </span>
+								<span > <h:inputText class="input" value="#{usuarioMB.usuario.endereco.cidade}"/> </span>
+							</div>
+							<div class="col-md-4">
+								<span > <h:outputText value="Estado"/> </span>
+								<span > <h:inputText class="input" value="#{usuarioMB.usuario.endereco.estado}"/> </span>
+							</div>
+						</div>
+						<HR />
+						<h:commandButton value="Salvar" action="#{usuarioMB.salvar()}" class="btn btn-primary" />
+						<h:dataTable var="usuario" value="#{usuarioMB.listaUsuario}" border="1">
+		<h:column>
+			<f:facet name="header">
+				Nome
+			</f:facet>
+			<h:outputText value="#{usuario.nome}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				E-mail
+			</f:facet>
+			<h:outputText value="#{usuario.email}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				CPF
+			</f:facet>
+			<h:outputText value="#{usuario.cpf}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				Dt. Nascimento
+			</f:facet>
+			<h:outputText value="#{usuario.dataNascimento}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				Logradouro
+			</f:facet>
+			<h:outputText value="#{usuario.endereco.logradouro}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				Bairro
+			</f:facet>
+			<h:outputText value="#{usuario.endereco.bairro}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				Cidade
+			</f:facet>
+			<h:outputText value="#{usuario.endereco.cidade}" />
+		</h:column>
+		
+	</h:dataTable>
+	</div>
+				<div class="tab-pane"  id="panel-880161">
+						<div class="row">
+							<span class="col-md-4">
+								<span > <h:outputText value="Razão Social"/> </span>
+								 <span ><h:inputText class="input" value="#{clienteMB.cliente.razaoSocial}"/> </span>
+							</span>
+							<span class="col-md-4">
+								<span > <h:outputText value="Nome Fantasia"/> </span>
+								<span > <h:inputText class="input" value="#{clienteMB.cliente.nomeFantasia}"/> </span>
+							</span>
+							<span class="col-md-4">
+								<span > <h:outputText value="CNPJ"/> </span>
+								<span > <h:inputText class="input" value="#{clienteMB.cliente.cnpj}"/> </span>
+							</span>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<span > <h:outputText value="Insc. Municipal"/> </span>
+								<span > <h:inputText class="input" value="#{clienteMB.cliente.inscMunicipal}"/> </span>
+							</div>
+							<div class="col-md-4">
+								<span > <h:outputText value="Insc. Estadual"/> </span>
+								<span > <h:inputText class="input" value="#{clienteMB.cliente.inscEstadual}"/> </span>
+							</div>
+							
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<span > <h:outputText value="CEP"/> </span>
+								<span > <h:inputText class="input" value="#{clienteMB.cliente.endereco.cep}"/> </span>
+							</div>
+							<div class="col-md-4">
+								<span > <h:outputText value="Logradouro"/> </span>
+								<span > <h:inputText class="input" value="#{clienteMB.cliente.endereco.logradouro}"/> </span>
+							</div>
+							<div class="col-md-4">
+								<span > <h:outputText value="Número"/> </span>
+								<span > <h:inputText class="input" value="#{clienteMB.cliente.endereco.numero}"/> </span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<span > <h:outputText value="Complemento"/> </span>
+								<span > <h:inputText class="input" value="#{clienteMB.cliente.endereco.complemento}"/> </span>
+							</div>
+							<div class="col-md-3">
+								<span > <h:outputText value="Bairro"/> </span>
+								<span > <h:inputText class="input" value="#{clienteMB.cliente.endereco.bairro}"/> </span>
+							</div>
+							<div class="col-md-3">
+								<span> <h:outputText value="Cidade"/> </span>
+								<span > <h:inputText class="input" value="#{clienteMB.cliente.endereco.cidade}"/> </span>
+							</div>
+							<div class="col-md-3">
+								<span > <h:outputText value="Estado"/> </span>
+								<span > <h:inputText class="input" value="#{clienteMB.cliente.endereco.estado}"/> </span>
+							</div>
+						</div>
+						<hr/>
+						<h:commandButton value="Salvar" action="#{clienteMB.salvar()}" class="btn btn-primary" />
+						<BR />
+						<h:dataTable  var="cliente" value="#{clienteMB.listaCliente}" border="1">
+							<h:column>
+								<f:facet name="header">
+									Nome Fantasia
+								</f:facet>
+								<h:outputText value="#{cliente.nomeFantasia}" />
+							</h:column>
+							
+							<h:column>
+								<f:facet name="header">
+									CNPJ
+								</f:facet>
+								<h:outputText value="#{cliente.cnpj}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									Razão Social
+								</f:facet>
+								<h:outputText value="#{cliente.razaoSocial}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									Logradouro
+								</f:facet>
+								<h:outputText value="#{cliente.endereco.logradouro}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									Bairro
+								</f:facet>
+								<h:outputText value="#{cliente.endereco.bairro}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									Cidade
+								</f:facet>
+								<h:outputText value="#{cliente.endereco.cidade}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									Estado
+								</f:facet>
+								<h:outputText value="#{cliente.endereco.estado}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									CEP
+								</f:facet>
+								<h:outputText value="#{cliente.endereco.cep}" />
+							</h:column>
+						</h:dataTable>
+						<div style="height: 130px !important; display: block; position: relative;">
+						
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	</h:form>
+</ui:define>
+</ui:composition>
+</html>
+

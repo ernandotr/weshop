@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+		xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+<ui:composition template="resources/templates/template.xhtml">
+	<ui:define name="corpo">
+		<div class="container">
+				<!-- 
+				<div class="row">
+					<nav >
+					  	<ul class="menu">
+					  		<li><a href="#">Lojas</a></li>
+					        <li><a href="#">Vestuário/Acessórios</a></li>
+					        <li><a href="#">Prest. de Serviço</a></li>
+					        <li><a href="#">Comer e Beber</a></li>
+					        <li><a href="#">Estética</a></li>
+					        <li><a href="#">Saúde</a></li>
+					        <li><a href="#">Elétrico/Eletrônicos</a></li>               
+					        <li><a href="#">Lar/Construção</a></li>
+					        <li><a href="#">Carros/Acessórios</a></li>
+					        <li><a href="#">Mais</a>
+					             <ul>
+					                 <li><a href="#">Contato</a></li>
+					                 <li><a href="#">Sobre</a></li>
+					             </ul>
+					         </li>
+						</ul>
+					</nav>
+				</div>
+					 -->
+			<div class="pagina">
+				<!-- 
+					<div class="row carrocel" >
+					<div class="carousel slide" id="carousel-938889">
+					<ol class="carousel-indicators">
+						<li data-slide-to="0" data-target="#carousel-938889">
+						</li>
+						<li data-slide-to="1" data-target="#carousel-938889" class="active">
+						</li>
+						<li data-slide-to="2" data-target="#carousel-938889">
+						</li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item" align="center">
+							
+							<img  alt="1200x300" src="resources/img/notebook-apple.jpg"/>
+							<div class="carousel-caption">
+								<h4>
+									1
+								</h4>
+								<p>
+									
+								</p>
+							</div>
+						</div>
+						<div class="item active" align="center">
+							<img width="1200" height="200" alt="1200x300" src="resources/img/Notebook-Apple2.jpg"/>
+							<div class="carousel-caption">
+								<h4>
+									2
+								</h4>
+								
+							</div>
+						</div>
+						<div class="item" align="center">
+							<img width="1200" height="300" alt="1200x300" src="resources/img/AspireS324-X2.jpg"/>
+							<div class="carousel-caption">
+								<h4>
+									3
+								</h4>
+							</div>
+						</div>
+					</div> <a class="left carousel-control" href="#carousel-938889" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-938889" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+				</div>		
+				</div>
+				 -->
+				
+				<div class="row" >
+				<div class="col-sm-2 menu-left">
+					<div class="row">
+						<h4 align="center" class="titulo-lat">Localizar Comércio</h4>
+						<p align="center">
+							<h:selectOneMenu styleClass="select-menu-lat">
+								<f:selectItem itemLabel="--Cidades--" />
+							</h:selectOneMenu>
+						</p>
+						<p align="center">
+							<h:selectOneMenu styleClass="select-menu-lat">
+								<f:selectItem itemLabel="--Bairros--"/>
+							</h:selectOneMenu>
+						</p>
+					</div>
+					<hr />
+					<div  class="row menu-left" >
+						<p>
+							<a class="bt-lateral"  href="">Melhores Ofertas</a>
+						</p>
+						<p>
+							<a class="bt-lateral" href="">Minha Pontuação</a>
+						</p>
+						<p></p>
+					</div>
+					<hr />
+					<h4 style="background-color: #0080c0; margin-left: 10px; border-radius:5px; color:#000">Categorias</h4>
+					<div class="row menu-left" >
+						<p  class="categorias">
+							<a href="#">Vestuário</a>
+						</p>
+						<p  class="categorias">
+							<a href="#">Serviços</a>
+						</p>
+						<p  class="categorias">
+							<a  href="#">Bares e Restaurantes</a>
+						</p>
+						<p  class="categorias">
+							<a  href="#">Saúde</a>
+						</p>
+						<p  class="categorias">
+							<a  href="#">Eletro Eletrônicos</a>
+						</p>
+						<p class="categorias">
+							<a href="#">Lar e Construção</a>
+						</p>
+						<p class="categorias">
+							<a href="#">Mais</a>
+						</p>
+					</div>
+				</div>
+				<div class="col-sm-8 images">
+				<div class="row">
+					<div class="col-md-4">
+							<div class="thumbnail">
+								<img alt="200x150" src="resources/img/msg1.png"/>
+								<div class="caption">
+									<h4>
+										Produto 1
+									</h4>
+									<p>
+										R$19,90
+									</p>
+									<p>
+										<a class="btn btn-primary" href="#">Ir a loja</a> <a class="btn" href="#">Ver Outros</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<img alt="200x150" src="resources/img/cloud1.png"/>
+								<div class="caption">
+									<h4>
+										Produto 1
+									</h4>
+									<p>
+										R$19,90
+									</p>
+									<p>
+										<a class="btn btn-primary" href="#">Ir a loja</a> <a class="btn" href="#">Ver Outros</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<img alt="200x150" src="resources/img/star_p.png"/>
+								<div class="caption">
+									<h4>
+										Produto 1
+									</h4>
+									<p>
+										R$19,90
+									</p>
+									<p>
+										<a class="btn btn-primary" href="#">Ir a loja</a> <a class="btn" href="#">Ver Outros</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<img alt="200x150" src="resources/img/cloud1.png"/>
+								<div class="caption">
+									<h4>
+										Produto 1
+									</h4>
+									<p>
+										R$19,90
+									</p>
+									<p>
+										<a class="btn btn-primary" href="#">Ir a loja</a> <a class="btn" href="#">Ver Outros</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<img alt="200x150" src="resources/img/star_p.png"/>
+								<div class="caption">
+									<h4>
+										Produto 1
+									</h4>
+									<p>
+										R$19,90
+									</p>
+									<p>
+										<a class="btn btn-primary" href="#">Ir a loja</a> <a class="btn" href="#">Ver Outros</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<img alt="200x150" src="resources/img/msg1.png"/>
+								<div class="caption">
+									<h4>
+										Produto 1
+									</h4>
+									<p>
+										R$19,90
+									</p>
+									<p>
+										<a class="btn btn-primary" href="#">Ir a loja</a> <a class="btn" href="#">Ver Outros</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+					<div class="col-sm-2">
+						<H3 align="center">Publicidade</H3>
+						<hr/>
+					</div>
+			</div>
+				</div>	
+		</div>
+		
+
+		
+			<!-- 
+			<div class="jumbotron ">
+				<h1>
+					Bem Vindo, ao We Shop!
+				</h1>
+				<p>
+					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+				</p>
+				<p>
+					<a class="btn btn-primary  glyphicon glyphicon-search"  >Learn more</a>
+				</p>
+			</div>
+		 -->
+	</ui:define>
+</ui:composition>
+</html>
